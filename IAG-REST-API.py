@@ -17,10 +17,10 @@ combineKey = iamKey+randomKey
 md5 = hashlib.md5(combineKey.encode('utf-8')).hexdigest()
 
 ### Print Generated Key ###
-print ('=====Key Indicator====')
-print ('Presharekey='+iamKey)
-print ('Random='+randomKey)
-print ('Hash='+md5)
+##print ('=====Key Indicator====')
+##print ('Presharekey='+iamKey)
+##print ('Random='+randomKey)
+##print ('Hash='+md5)
 
 ### POST Function ###
 
@@ -85,10 +85,11 @@ pload={'random':randomKey,'md5':md5,
 
 #####Make POST Request to IAM API###########
 postMsg = ('http://'+iamIP+':'+iamPort+postStatement)
-print ('=====POST Request====')
-print (postMsg)
-print ('=====POST Payload====')
-print (pload)
+##print ('=====POST Request====')
+##print (postMsg)
+##print ('=====POST Payload====')
+##print (pload)
 r=requests.post(postMsg, json=pload)
-print ('=====Response====')
-print (r.json())
+##print ('=====Response====')
+results = r.json()
+print (results)
