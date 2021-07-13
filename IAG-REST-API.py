@@ -1,6 +1,7 @@
 import hashlib
 import random
 import requests
+import json
 from datetime import datetime
 
 
@@ -92,4 +93,7 @@ postMsg = ('http://'+iamIP+':'+iamPort+postStatement)
 r=requests.post(postMsg, json=pload)
 ##print ('=====Response====')
 results = r.json()
-print (results)
+
+json_object = json.dumps(results, indent = 4)  
+print(json_object)
+
