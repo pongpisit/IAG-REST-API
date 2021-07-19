@@ -2,6 +2,7 @@ import hashlib
 import random
 import requests
 import json
+import time
 from datetime import datetime
 
 ###Initial Variables###
@@ -12,7 +13,7 @@ expireDate= str(datetime.now().year)+"-"+str(datetime.now().month)+"-"+str(datet
 
 ### Generate Random Key ####
 iamKey="1234"
-randomKey=str(random.randrange(9999))
+randomKey=str(time.time())+str(random.randrange(9999))
 combineKey = iamKey+randomKey
 md5 = hashlib.md5(combineKey.encode("utf-8")).hexdigest()
 
