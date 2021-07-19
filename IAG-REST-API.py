@@ -92,7 +92,7 @@ postMsg = ("http://"+iamIP+":"+iamPort+postStatement)
 r=requests.post(postMsg, json=pload)
 ##print ("=====Response====")
 results = r.json()
-print (results)
+print (json.dumps(results))
 ##json_object = json.dumps(results, indent = 4)  
 ##print(json_object)
 
